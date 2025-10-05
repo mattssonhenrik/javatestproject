@@ -3,9 +3,17 @@
  */
 package org.example;
 
+import org.example.calculator.Calculator;
+
 public class App {
+    Calculator calculator = new Calculator();
+
     public String getGreeting() {
         return "Hello World!";
+    }
+
+    public Calculator getCalculator() {
+        return calculator;
     }
 
     public static void main(String[] args) {

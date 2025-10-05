@@ -3,12 +3,25 @@
  */
 package org.example;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.example.calculator.Calculator;
 
 class AppTest {
     @Test void appHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
+    }
+    @Test void beforeImplementingCalculator() {
+        Calculator calculator = new Calculator();
+            assertNotNull(calculator);
+    }
+
+    // @Disabled("Not wired yet")
+    @Test void getCalculator() {
+        App classUnderTest = new App();
+        assertNotNull(classUnderTest.getCalculator());
     }
 }
