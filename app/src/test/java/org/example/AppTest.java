@@ -8,20 +8,41 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.example.calculator.Calculator;
+import org.example.calculator.addition.Addition;
 
 class AppTest {
-    @Test void appHasAGreeting() {
+    App classUnderTest = new App();
+
+    @Test
+    void appHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
-    @Test void beforeImplementingCalculator() {
+
+    @Test
+    void beforeImplementingCalculator() {
         Calculator calculator = new Calculator();
-            assertNotNull(calculator);
+        assertNotNull(calculator);
     }
 
     // @Disabled("Not wired yet")
-    @Test void getCalculator() {
+    @Test
+    void getCalculator() {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getCalculator());
+    }
+
+    @Disabled("Silly test to just try")
+    @Test
+    void checkThatAppAndCalculatorAreNotSame() {
+        App classUnderTest = new App();
+        Calculator classToCompare = new Calculator();
+        assertNotSame(classUnderTest, classToCompare);
+    }
+
+    @Test
+    void addTwoNumbers() {
+        long testNumber = classUnderTest.calculator.getAddition().addNumbers(2,5);
+        assertEquals(7,testNumber);
     }
 }
